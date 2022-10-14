@@ -11,13 +11,19 @@ def listen():
 
 
 # Conversation type words
-greet_words = ['Hi', 'Hello', 'Yo']
-bye_words = ['Bye', 'See you', 'Chat to you soon']
+greet_words = ['hi', 'hello', 'yo']
+bye_words = ['bye', 'see you', 'chat to you soon']
 
 
 def decide(command):
+    # Converting everyting to lower case for simplicity and match
+    command = command.lower()
     words_divider = command.split(" ")
-    print(words_divider)
+    for word in words_divider:
+        if word in greet_words:
+            print("Thank you for greeting me")
+        elif word in bye_words:
+            print("It was nice talking to you. Bye take care.")
 
 
 def talkback():
