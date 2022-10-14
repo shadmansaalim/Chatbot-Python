@@ -7,16 +7,25 @@ Chatbot Steps
 
 
 def listen():
-    return input("Say Something")
+    return input("Say Something : ")
 
 
-def decide():
-    pass
+# Conversation type words
+greet_words = ['Hi', 'Hello', 'Yo']
+bye_words = ['Bye', 'See you', 'Chat to you soon']
+
+
+def decide(command):
+    words_divider = command.split(" ")
+    print(words_divider)
 
 
 def talkback():
     pass
 
 
-# Listening
-listen()
+# Listening command
+command = listen()
+
+# Deciding
+decide(command)
