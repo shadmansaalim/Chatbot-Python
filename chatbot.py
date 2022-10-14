@@ -13,6 +13,7 @@ def listen():
 # Conversation type words
 greet_words = ['hi', 'hello', 'yo']
 bye_words = ['bye', 'see you', 'chat to you soon']
+bad_words = ['kill', 'bitch', 'fuck']
 
 
 def decide(command):
@@ -21,17 +22,23 @@ def decide(command):
     words_divider = command.split(" ")
     for word in words_divider:
         if word in greet_words:
-            print("Thank you for greeting me")
+            talkback("Hi mate, how's it going.")
+            break
         elif word in bye_words:
-            print("It was nice talking to you. Bye take care.")
+            talkback("It was nice talking to you. Bye take care.")
+            break
+        elif word in bad_words:
+            talkback("Please talk in a good way mate, you are using bad words.")
+            break
 
 
-def talkback():
-    pass
+def talkback(response):
+    print(response)
 
 
-# Listening command
-command = listen()
-
-# Deciding
-decide(command)
+# Chatbot
+while True:
+    # Listening command
+    command = listen()
+    # Deciding
+    decide(command)
